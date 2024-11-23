@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-Puzzle Game</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .puzzle-container {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+        }
+        .tile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #007bff;
+            color: white;
+            font-size: 2em;
+            cursor: pointer;
+            user-select: none;
+            border: 1px solid #0056b3;
+            transition: background-color 0.3s;
+        }
+        .tile.hidden {
+            background-color: transparent;
+            border: none;
+        }
+        #shuffle-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        @media (max-width: 400px) {
+            .puzzle-container {
+                grid-template-columns: repeat(3, 80px);
+                grid-template-rows: repeat(3, 80px);
+            }
+            .tile {
+                font-size: 1.5em;
+            }
+            #shuffle-button {
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="puzzle-container">
+        <div id="tile1" class="tile">1</div>
+        <div id="tile2" class="tile">2</div>
+        <div id="tile3" class="tile">3</div>
+        <div id="tile4" class="tile">4</div>
+        <div id="tile5" class="tile">5</div>
+        <div id="tile6" class="tile">6</div>
+        <div id="tile7" class="tile">7</div>
+        <div id="tile8" class="tile">8</div>
+        <div id="empty-space" class="tile hidden"></div>
+    </div>
+    <button id="shuffle-button">Shuffle</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
